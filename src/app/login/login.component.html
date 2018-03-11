@@ -1,0 +1,10 @@
+<div class="login-page">
+    <div class="form">
+      <form class="login-form" [formGroup]="loginForm">
+        <input type="text" placeholder="username" formControlName="username"/>
+        <input type="password" placeholder="password" formControlName="password"/>
+        <button (click) = "login(loginForm)">login</button>
+        <p class="message">Forgot password? <a href="#">Lets reset the password</a></p>
+      </form>
+    </div>
+  </div>
