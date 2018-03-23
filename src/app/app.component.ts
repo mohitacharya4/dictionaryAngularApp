@@ -3,6 +3,9 @@
  */
 import { Component, OnInit, ViewEncapsulation} from '@angular/core';
 import { AppState } from './app.service';
+import { MenuItem } from 'primeng/api';
+import { ButtonModule } from 'primeng/button';
+import { TabViewModule } from 'primeng/tabview';
 
 /**
  * App Component
@@ -19,15 +22,30 @@ import { AppState } from './app.service';
 export class AppComponent implements OnInit {
   public name = 'Physical Education Vocabulary';
   public url = 'https://twitter.com/AngularClass';
+  items: MenuItem[];
 
   constructor(
     public appState: AppState
-
-    
   ) {}
 
   public ngOnInit() {
-    console.log('Initial App State', this.appState.state);
+    this.items = [
+      {
+          label: 'Physical Education Terminology',
+          icon: 'fa fa-book',
+          routerLink: ['/frontpage']          
+      },
+      {
+          label: 'Previous Year UGC Net papers with solutions',
+          icon: 'fa-newspaper-o',
+          routerLink: ['/questionpapers']
+      },
+      {
+        label: 'Download the App from playstore',
+        icon: 'fa fa-download',
+        routerLink: ['/downloadpage']
+    }
+  ];
   }
 
 }

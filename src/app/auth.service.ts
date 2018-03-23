@@ -59,5 +59,10 @@ export class AuthService {
         return data;
       });
   }
-
+  
+  getSampleWords(): Observable<any> {
+    let url = '/getWordsList';
+    this.setAuthHeaders();
+    return this.rest.get(url);
+  }
 }

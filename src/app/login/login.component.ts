@@ -70,8 +70,4 @@ this.userData.login.email = model.value.username;
  route(){
     this.router.navigate(['/dashboard']);
  }
-
-
-
-
 }
